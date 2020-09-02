@@ -1,0 +1,16 @@
+Data Set Modifications:
+    - Converted all data sets from .data files to .csv files
+    - Added header labels to all data sets
+    - Removed index field from the glass data set
+    - Converted all yes/no fields in the house votes data set to 1s and 0s
+
+Data Cleaning Methodology:
+    - Any data set with a total proportion of entries containing missing values less than or equal to 5% will have all
+      entries with missing values removed from the data set
+        - This applied to the 'breast-cancer-wisconsin' data set
+    - Any data set with a total proportion of entries containing missing values greater than 5% will have all missing
+      values imputed using Multiple Imputation by Chained Equations (MICE).
+        - The only data set in this group which this applied to was the 'house-votes-84' data set, which was a binary
+          set, where X_i \in {0, 1}
+        - The only exception to this rule is entries which have no values, in which that entry will be removed from the
+          data set.
